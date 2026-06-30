@@ -92,6 +92,12 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
+      { name: "twitter:title", content: "KamTech Solutions" },
+      { name: "description", content: "KamTech Portfolio showcases IT freelance services, projects, skills, and interests." },
+      { property: "og:description", content: "KamTech Portfolio showcases IT freelance services, projects, skills, and interests." },
+      { name: "twitter:description", content: "KamTech Portfolio showcases IT freelance services, projects, skills, and interests." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/e87b185d-f453-4459-b279-3ddf0fec86a9/id-preview-b00a80b1--d014aaac-b17b-433f-b0ef-e430b2f3aff4.lovable.app-1782814683515.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/e87b185d-f453-4459-b279-3ddf0fec86a9/id-preview-b00a80b1--d014aaac-b17b-433f-b0ef-e430b2f3aff4.lovable.app-1782814683515.png" },
     ],
     links: [
       {
