@@ -40,6 +40,20 @@ export const projects: Project[] = [
     stack: ["Java", "Spring Security", "Swagger", "Keycloak", "Vault", "Docker"],
   },
   {
+    slug: "confidential-dgeac",
+    name: "Confidential",
+    client: "DGEAC — European Commission",
+    period: "2026 — Present",
+    status: "current",
+    summary:
+      "An ongoing engagement with the European Commission's Directorate-General for Education, Youth, Sport and Culture. Project details are confidential.",
+    highlights: [
+      "Software engineering services for DGEAC",
+      "Project details under NDA — available on request",
+    ],
+    stack: ["Confidential"],
+  },
+  {
     slug: "cctool",
     name: "CCTool",
     client: "Isabel — Brussels",
