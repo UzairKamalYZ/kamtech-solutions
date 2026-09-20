@@ -14,7 +14,7 @@ export const projects: Project[] = [
     slug: "isabel-6",
     name: "Isabel 6",
     client: "Isabel — Brussels",
-    period: "2017 — Present",
+    period: "2017 — 2026",
     status: "current",
     summary:
       "A multibanking platform giving organizations a single interface to manage banking across many banks — payments, direct debits, signatures, status tracking and account information.",
@@ -29,7 +29,7 @@ export const projects: Project[] = [
     slug: "isabel-connect",
     name: "Isabel Connect",
     client: "Isabel — Brussels",
-    period: "2017 — Present",
+    period: "2017 — 2026",
     status: "current",
     summary:
       "API-based multibanking built on top of Isabel 6, embedding payments and account information directly into ERPs, accounting and treasury systems.",
@@ -40,10 +40,24 @@ export const projects: Project[] = [
     stack: ["Java", "Spring Security", "Swagger", "Keycloak", "Vault", "Docker"],
   },
   {
+    slug: "confidential-dgeac",
+    name: "Confidential",
+    client: "DGEAC — European Commission",
+    period: "2026 — Present",
+    status: "current",
+    summary:
+      "An ongoing engagement with the European Commission's Directorate-General for Education, Youth, Sport and Culture. Project details are confidential.",
+    highlights: [
+      "Software engineering services for DGEAC",
+      "Project details under NDA — available on request",
+    ],
+    stack: ["Confidential"],
+  },
+  {
     slug: "cctool",
     name: "CCTool",
     client: "Isabel — Brussels",
-    period: "2017 — Present",
+    period: "2017 — 2026",
     status: "current",
     summary:
       "Internal customer-support tool used to triage user queries and incidents across the Isabel product suite.",
