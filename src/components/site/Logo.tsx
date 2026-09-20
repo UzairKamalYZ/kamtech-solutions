@@ -7,7 +7,7 @@ export function Logo({ className }: { className?: string }) {
       <img
         src={logoAsset.url}
         alt="KamTech Solutions"
-        className="h-10 w-auto transition-transform duration-200 group-hover:scale-[1.03] md:h-9"
+        className="h-12 w-auto transition-transform duration-200 group-hover:scale-[1.03] md:h-11"
       />
     </Link>
   );
