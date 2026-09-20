@@ -15,7 +15,7 @@ export const projects: Project[] = [
     name: "Isabel 6",
     client: "Isabel — Brussels",
     period: "2017 — 2026",
-    status: "current",
+    status: "previous",
     summary:
       "A multibanking platform giving organizations a single interface to manage banking across many banks — payments, direct debits, signatures, status tracking and account information.",
     highlights: [
@@ -30,7 +30,7 @@ export const projects: Project[] = [
     name: "Isabel Connect",
     client: "Isabel — Brussels",
     period: "2017 — 2026",
-    status: "current",
+    status: "previous",
     summary:
       "API-based multibanking built on top of Isabel 6, embedding payments and account information directly into ERPs, accounting and treasury systems.",
     highlights: [
@@ -58,7 +58,7 @@ export const projects: Project[] = [
     name: "CCTool",
     client: "Isabel — Brussels",
     period: "2017 — 2026",
-    status: "current",
+    status: "previous",
     summary:
       "Internal customer-support tool used to triage user queries and incidents across the Isabel product suite.",
     highlights: [
