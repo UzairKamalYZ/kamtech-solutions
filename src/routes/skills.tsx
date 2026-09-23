@@ -36,7 +36,7 @@ function SkillsPage() {
           {skillGroups.map((g) => (
             <div
               key={g.title}
-              className="rounded-xl border border-border bg-card p-6 transition-colors hover:border-primary/40"
+              className="rounded-xl border border-border bg-card p-6 transition-all hover:-translate-y-0.5 hover:border-primary/40 hover:shadow-lift"
             >
               <h2 className="text-sm font-semibold uppercase tracking-wider text-primary">
                 {g.title}

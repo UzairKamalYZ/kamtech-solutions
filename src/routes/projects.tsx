@@ -53,7 +53,7 @@ function ProjectGroup({ title, items }: { title: string; items: Project[] }) {
         {items.map((p) => (
           <article
             key={p.slug}
-            className="flex flex-col rounded-xl border border-border bg-card p-6 transition-all hover:-translate-y-1 hover:shadow-elegant"
+            className="group flex flex-col rounded-xl border border-border bg-card p-6 transition-all hover:-translate-y-1 hover:border-primary/40 hover:shadow-lift"
           >
             <div className="flex items-start justify-between gap-3">
               <div>
@@ -83,6 +83,7 @@ function ProjectGroup({ title, items }: { title: string; items: Project[] }) {
                 </span>
               ))}
             </div>
+            <div className="mt-5 h-1 w-0 rounded-full bg-primary transition-all duration-500 group-hover:w-full" />
           </article>
         ))}
       </div>
