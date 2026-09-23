@@ -56,19 +56,29 @@ function HomePage() {
           </Link>
         </div>
 
-        <div className="mt-12 grid max-w-2xl grid-cols-3 gap-6 border-t border-border/60 pt-8">
-          {[
-            { value: "15+", label: "Years building production systems" },
-            { value: "20M+", label: "End users served via our platforms" },
-            { value: "B2B", label: "Banking · AI · enterprise" },
-          ].map((s) => (
-            <div key={s.label}>
-              <div className="font-display text-2xl font-semibold text-foreground md:text-3xl">
-                {s.value}
+        <div className="relative mt-12 max-w-2xl overflow-hidden rounded-2xl bg-foreground px-8 py-8 shadow-glow">
+          <div
+            aria-hidden
+            className="absolute inset-0 opacity-10"
+            style={{
+              backgroundImage: "radial-gradient(var(--color-primary) 1px, transparent 1px)",
+              backgroundSize: "24px 24px",
+            }}
+          />
+          <div className="relative grid grid-cols-3 gap-6">
+            {[
+              { value: "15+", label: "Years building production systems" },
+              { value: "20M+", label: "End users served via our platforms" },
+              { value: "B2B", label: "Banking · AI · enterprise" },
+            ].map((s, i) => (
+              <div key={s.label} className={i > 0 ? "border-l border-primary-foreground/15 pl-6" : ""}>
+                <div className="font-display text-2xl font-semibold text-brand-soft md:text-3xl">
+                  {s.value}
+                </div>
+                <div className="mt-1 text-xs text-primary-foreground/60 md:text-sm">{s.label}</div>
               </div>
-              <div className="mt-1 text-xs text-muted-foreground md:text-sm">{s.label}</div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </PageHero>
 
@@ -95,13 +105,14 @@ function HomePage() {
           {services.slice(0, 6).map((s) => (
             <div
               key={s.title}
-              className="group rounded-xl border border-border bg-card p-6 transition-all hover:-translate-y-1 hover:border-primary/40 hover:shadow-elegant"
+              className="group rounded-xl border border-border bg-card p-6 transition-all hover:-translate-y-1 hover:border-primary/40 hover:shadow-lift"
             >
               <div className="inline-flex h-10 w-10 items-center justify-center rounded-lg bg-brand-soft text-primary">
                 <s.icon className="h-5 w-5" />
               </div>
               <h3 className="mt-4 text-lg font-semibold text-foreground">{s.title}</h3>
               <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{s.summary}</p>
+              <div className="mt-5 h-1 w-0 rounded-full bg-primary transition-all duration-500 group-hover:w-full" />
             </div>
           ))}
         </div>
@@ -121,7 +132,7 @@ function HomePage() {
             {featured.map((p) => (
               <article
                 key={p.slug}
-                className="flex flex-col rounded-xl border border-border bg-card p-6 transition-all hover:-translate-y-1 hover:shadow-elegant"
+                className="flex flex-col rounded-xl border border-border bg-card p-6 transition-all hover:-translate-y-1 hover:border-primary/40 hover:shadow-lift"
               >
                 <div className="text-xs font-medium uppercase tracking-wider text-primary">
                   {p.client}

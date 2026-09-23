@@ -15,10 +15,10 @@ export function PageHero({
     <section className="relative overflow-hidden border-b border-border/60 bg-gradient-to-b from-surface/60 to-background">
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-0 opacity-60"
+        className="pointer-events-none absolute inset-0"
         style={{
           backgroundImage:
-            "radial-gradient(60% 50% at 50% 0%, color-mix(in oklab, var(--brand) 18%, transparent), transparent 70%)",
+            "radial-gradient(55% 50% at 72% 8%, color-mix(in oklab, var(--brand) 20%, transparent), transparent 70%), radial-gradient(40% 40% at 15% 90%, color-mix(in oklab, var(--brand) 8%, transparent), transparent 70%)",
         }}
       />
       <div className="container-page relative py-20 md:py-28">

@@ -37,7 +37,7 @@ function ServicesPage() {
           {services.map((s) => (
             <article
               key={s.title}
-              className="rounded-xl border border-border bg-card p-7 transition-all hover:-translate-y-1 hover:border-primary/40 hover:shadow-elegant"
+              className="group rounded-xl border border-border bg-card p-7 transition-all hover:-translate-y-1 hover:border-primary/40 hover:shadow-lift"
             >
               <div className="inline-flex h-11 w-11 items-center justify-center rounded-lg bg-brand-soft text-primary">
                 <s.icon className="h-5 w-5" />
@@ -56,6 +56,7 @@ function ServicesPage() {
                   </span>
                 ))}
               </div>
+              <div className="mt-6 h-1 w-0 rounded-full bg-primary transition-all duration-500 group-hover:w-full" />
             </article>
           ))}
         </div>
