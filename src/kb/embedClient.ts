@@ -16,6 +16,16 @@ function getWorker() {
     if (m.type === "result") p.resolve(m.vectors);
     else p.reject(new Error(m.error));
   };
+  // If the worker fails to load or throws at top level, fail all pending calls
+  // instead of leaving them hanging, and allow a fresh worker on the next call.
+  worker.onerror = (e) => {
+    e.preventDefault();
+    const err = new Error(`Embedding worker failed: ${e.message || "unknown error"}`);
+    for (const p of pending.values()) p.reject(err);
+    pending.clear();
+    worker?.terminate();
+    worker = null;
+  };
   return worker;
 }
 

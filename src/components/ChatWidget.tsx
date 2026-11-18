@@ -15,7 +15,9 @@ const PANEL_KEY = "kamtech-chat-panel";
 const HISTORY_KEY = "kamtech-chat-history";
 const WELCOME = "Hi 👋 I'm the KamTech Assistant. Ask me about our services, projects or tech stack.";
 const FALLBACK = "I couldn't find that on our website. The best way is to contact us directly.";
-const QUICK: [string, string][] = [
+const CONTACT_REPLY =
+  "Rates and availability depend on the scope of your project. Get in touch and we'll send you a tailored quote.";
+const QUICK:[string, string][] = [
   ["Services", "What services do you offer?"],
   ["Current projects", "What are you working on?"],
   ["Tech stack", "What technologies do you use?"],
@@ -96,11 +98,17 @@ export default function ChatWidget({ open, onClose, buttonPos, buttonSize, reset
   }, [open, onClose]);
 
   const build = useCallback(async (force = false) => {
-    setModelProgressListener((s, p) => {
-      if (s === "progress" && p != null) setStatus(`Downloading language model… ${Math.round(p)}%`);
-    });
     if (force) await clearIndexCache();
     const cached = force ? null : await loadCachedIndex();
+    // Only surface model progress while building; with a cached index the chat is already
+    // usable and the model loads (from cache) in the background on the first question.
+    setModelProgressListener(
+      cached
+        ? null
+        : (s, p) => {
+            if (s === "progress" && p != null) setStatus(`Downloading language model… ${Math.round(p)}%`);
+          },
+    );
     if (cached) {
       indexRef.current = cached;
       setStatus(null);
@@ -134,7 +142,10 @@ export default function ChatWidget({ open, onClose, buttonPos, buttonSize, reset
       const best = hits[0];
       const contact = isContactIntent(q);
       let reply: Msg;
-      if (!best || best.score < SIMILARITY_THRESHOLD) {
+      if (contact && best?.entry.id !== "contact") {
+        // Pricing / hiring questions: don't answer with an unrelated section, route to contact.
+        reply = { role: "bot", text: CONTACT_REPLY, contact: true, score: best?.score };
+      } else if (!best || best.score < SIMILARITY_THRESHOLD) {
         reply = { role: "bot", text: FALLBACK, contact: true, score: best?.score };
       } else {
         const e = best.entry;
@@ -149,6 +160,9 @@ export default function ChatWidget({ open, onClose, buttonPos, buttonSize, reset
       }
       await new Promise((r) => setTimeout(r, 300));
       setMessages((m) => [...m, reply]);
+    } catch (err) {
+      console.error(err);
+      setMessages((m) => [...m, { role: "bot", text: FALLBACK, contact: true }]);
     } finally {
       setTyping(false);
     }

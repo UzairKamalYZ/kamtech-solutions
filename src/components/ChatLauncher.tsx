@@ -41,7 +41,8 @@ export function ChatLauncher() {
           transition: btn.animating ? "left 250ms ease, top 250ms ease" : undefined,
           touchAction: "none",
         }}
-        className={`fixed z-[9999] inline-flex items-center justify-center rounded-full bg-primary text-primary-foreground shadow-lift ring-4 ring-brand-soft/70 outline-none focus-visible:ring-primary/40 ${btn.dragging ? "cursor-grabbing scale-105" : "cursor-pointer hover:scale-105"} transition-transform`}
+        // On mobile the open panel is fullscreen with its own close button; hide the launcher so it doesn't cover the input.
+        className={`${open ? "max-sm:hidden" : ""} fixed z-[9999] inline-flex items-center justify-center rounded-full bg-primary text-primary-foreground shadow-lift ring-4 ring-brand-soft/70 outline-none focus-visible:ring-primary/40 ${btn.dragging ? "cursor-grabbing scale-105" : "cursor-pointer hover:scale-105"} transition-transform`}
       >
         {open ? <X className="h-6 w-6" /> : <MessageCircle className="h-6 w-6" />}
       </button>

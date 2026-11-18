@@ -14,6 +14,6 @@ export default defineConfig({
   },
   vite: {
     worker: { format: "es" },
-    optimizeDeps: { exclude: ["@xenova/transformers"] },
+    optimizeDeps: { include: ["@xenova/transformers", "onnxruntime-web"] },
   },
 });
