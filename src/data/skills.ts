@@ -52,15 +52,7 @@ export const skillGroups = [
   },
   {
     title: "Testing & Quality",
-    skills: [
-      "JUnit",
-      "TDD",
-      "BDD",
-      "Cucumber",
-      "Serenity BDD",
-      "Cluecumber",
-      "Selenium",
-    ],
+    skills: ["JUnit", "TDD", "BDD", "Cucumber", "Serenity BDD", "Cluecumber", "Selenium"],
   },
   {
     title: "Servers & Databases",

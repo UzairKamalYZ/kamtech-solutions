@@ -42,7 +42,10 @@ function loadInIframe(route: string): Promise<{ doc: Document; dispose: () => vo
 
 function contactChunk(doc: Document): Chunk | null {
   const links = Array.from(doc.querySelectorAll("a[href]")) as HTMLAnchorElement[];
-  const email = links.find((a) => a.getAttribute("href")!.startsWith("mailto:"))?.getAttribute("href")!.slice(7);
+  const email = links
+    .find((a) => a.getAttribute("href")!.startsWith("mailto:"))
+    ?.getAttribute("href")!
+    .slice(7);
   const phone = links.find((a) => a.getAttribute("href")!.startsWith("tel:"))?.textContent?.trim();
   const linkedin = links.find((a) => /linkedin\.com/i.test(a.href))?.href;
   const body = clean(textOf(doc.body));
@@ -64,7 +67,9 @@ function contactChunk(doc: Document): Chunk | null {
   };
 }
 
-export async function crawlSite(onProgress?: (done: number, total: number) => void): Promise<CrawledPage[]> {
+export async function crawlSite(
+  onProgress?: (done: number, total: number) => void,
+): Promise<CrawledPage[]> {
   const queue = [...SEED_ROUTES];
   const seen = new Set(queue);
   const pages: CrawledPage[] = [];

@@ -17,8 +17,7 @@ export const Route = createFileRoute("/about")({
       { property: "og:title", content: "About — KamTech Solutions" },
       {
         property: "og:description",
-        content:
-          "Who we are, what we believe, and why we built KamTech Solutions.",
+        content: "Who we are, what we believe, and why we built KamTech Solutions.",
       },
     ],
   }),
@@ -39,15 +38,15 @@ function AboutPage() {
           <p>
             The studio was founded on a simple belief: most enterprise software pain doesn't come
             from missing frameworks — it comes from missing judgment. Over {site.yearsExperience}+
-            years building platforms in banking, AI/ML, search, and high-volume data systems,
-            we've learned that the most valuable engineer in the room is the one who knows what
+            years building platforms in banking, AI/ML, search, and high-volume data systems, we've
+            learned that the most valuable engineer in the room is the one who knows what
             <em> not </em> to build.
           </p>
           <p>
-            That perspective shapes everything we do at KamTech. We bring the same engineering
-            rigor we apply at Isabel — Belgium's multibanking backbone — to every engagement,
-            whether you're scaling a payment platform, modernizing a legacy estate, or shipping
-            your first production API.
+            That perspective shapes everything we do at KamTech. We bring the same engineering rigor
+            we apply at Isabel — Belgium's multibanking backbone — to every engagement, whether
+            you're scaling a payment platform, modernizing a legacy estate, or shipping your first
+            production API.
           </p>
           <p>
             Today the company operates out of Brussels, working with European enterprises and
@@ -83,16 +82,14 @@ function AboutPage() {
 
         <aside className="space-y-6">
           <div className="rounded-xl border border-border bg-card p-6">
-            <h3 className="text-sm font-semibold uppercase tracking-wider text-primary">
-              Founder
-            </h3>
+            <h3 className="text-sm font-semibold uppercase tracking-wider text-primary">Founder</h3>
             <p className="mt-3 font-display text-lg font-semibold text-foreground">Uzair Kamal</p>
             <p className="mt-1 text-sm text-muted-foreground">
               Senior Software Engineer · Brussels
             </p>
             <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
-              Belgian software engineer with a BS in Computer Engineering from UET Peshawar and
-              a career spanning Pakistan, Belgium, and remote engagements with global teams.
+              Belgian software engineer with a BS in Computer Engineering from UET Peshawar and a
+              career spanning Pakistan, Belgium, and remote engagements with global teams.
             </p>
           </div>
 

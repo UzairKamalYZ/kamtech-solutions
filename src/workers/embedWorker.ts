@@ -19,7 +19,8 @@ self.onmessage = async (e: MessageEvent<{ id: number; texts: string[] }>) => {
     const out = await ext(texts, { pooling: "mean", normalize: true });
     const dim = out.dims[out.dims.length - 1];
     const vectors: number[][] = [];
-    for (let i = 0; i < texts.length; i++) vectors.push(Array.from(out.data.slice(i * dim, (i + 1) * dim)));
+    for (let i = 0; i < texts.length; i++)
+      vectors.push(Array.from(out.data.slice(i * dim, (i + 1) * dim)));
     self.postMessage({ type: "result", id, vectors });
   } catch (err) {
     self.postMessage({ type: "error", id, error: String(err) });

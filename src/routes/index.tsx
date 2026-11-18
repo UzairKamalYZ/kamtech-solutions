@@ -71,7 +71,10 @@ function HomePage() {
               { value: "20M+", label: "End users served via our platforms" },
               { value: "B2B", label: "Banking · AI · enterprise" },
             ].map((s, i) => (
-              <div key={s.label} className={i > 0 ? "border-l border-primary-foreground/15 pl-6" : ""}>
+              <div
+                key={s.label}
+                className={i > 0 ? "border-l border-primary-foreground/15 pl-6" : ""}
+              >
                 <div className="font-display text-2xl font-semibold text-brand-soft md:text-3xl">
                   {s.value}
                 </div>
@@ -86,9 +89,7 @@ function HomePage() {
       <section className="container-page py-20">
         <div className="flex items-end justify-between gap-6">
           <div>
-            <p className="text-xs font-semibold uppercase tracking-wider text-primary">
-              Services
-            </p>
+            <p className="text-xs font-semibold uppercase tracking-wider text-primary">Services</p>
             <h2 className="mt-2 text-3xl font-semibold tracking-tight md:text-4xl">
               How we help engineering teams ship
             </h2>
@@ -172,15 +173,13 @@ function HomePage() {
       <section className="container-page py-20">
         <div className="grid gap-10 lg:grid-cols-[1fr_2fr]">
           <div>
-            <p className="text-xs font-semibold uppercase tracking-wider text-primary">
-              Toolkit
-            </p>
+            <p className="text-xs font-semibold uppercase tracking-wider text-primary">Toolkit</p>
             <h2 className="mt-2 text-3xl font-semibold tracking-tight md:text-4xl">
               A deep, opinionated stack.
             </h2>
             <p className="mt-4 text-muted-foreground">
-              From low-level JVM tuning to streaming pipelines and modern frontends — we pick
-              the right tool for the job, not the trendiest one.
+              From low-level JVM tuning to streaming pipelines and modern frontends — we pick the
+              right tool for the job, not the trendiest one.
             </p>
             <Link
               to="/skills"

@@ -54,7 +54,9 @@ export function Footer() {
       </div>
       <div className="border-t border-border/60">
         <div className="container-page flex flex-col items-center justify-between gap-2 py-6 text-xs text-muted-foreground md:flex-row">
-          <span>© {new Date().getFullYear()} {site.company}. All rights reserved.</span>
+          <span>
+            © {new Date().getFullYear()} {site.company}. All rights reserved.
+          </span>
           <span>Brussels · Belgium</span>
         </div>
       </div>

@@ -28,11 +28,20 @@ type Opts = {
   disabled?: boolean;
 };
 
-export function useDraggable({ storageKey, width, height, snapToEdge, defaultPos, disabled }: Opts) {
+export function useDraggable({
+  storageKey,
+  width,
+  height,
+  snapToEdge,
+  defaultPos,
+  disabled,
+}: Opts) {
   const [pos, setPos] = useState<Pos | null>(null);
   const [dragging, setDragging] = useState(false);
   const [animating, setAnimating] = useState(false);
-  const start = useRef<{ px: number; py: number; x: number; y: number; moved: boolean } | null>(null);
+  const start = useRef<{ px: number; py: number; x: number; y: number; moved: boolean } | null>(
+    null,
+  );
   const justDragged = useRef(false);
   const dims = useRef({ width, height });
   dims.current = { width, height };
@@ -100,7 +109,9 @@ export function useDraggable({ storageKey, width, height, snapToEdge, defaultPos
 
   const onKeyDown = (e: React.KeyboardEvent) => {
     if (disabled || !pos) return;
-    const d = { ArrowLeft: [-20, 0], ArrowRight: [20, 0], ArrowUp: [0, -20], ArrowDown: [0, 20] }[e.key];
+    const d = { ArrowLeft: [-20, 0], ArrowRight: [20, 0], ArrowUp: [0, -20], ArrowDown: [0, 20] }[
+      e.key
+    ];
     if (!d) return;
     e.preventDefault();
     commit(clamp({ x: pos.x + d[0], y: pos.y + d[1] }, width, height));

@@ -9,7 +9,9 @@ export const clean = (s: string) => s.replace(/\s+/g, " ").trim();
 
 /** Split into sentences. */
 export function sentences(text: string): string[] {
-  return (text.match(/[^.!?]+[.!?]+(\s|$)|[^.!?]+$/g) ?? [text]).map((s) => s.trim()).filter(Boolean);
+  return (text.match(/[^.!?]+[.!?]+(\s|$)|[^.!?]+$/g) ?? [text])
+    .map((s) => s.trim())
+    .filter(Boolean);
 }
 
 /** Cut text to ~max chars at a sentence end. */

@@ -45,7 +45,10 @@ export const INTENTS: Intent[] = [
 export function questionsFor(chunk: Chunk, firstOfRoute: boolean): string[] {
   const qs = templateQuestions(chunk.title);
   for (const intent of INTENTS) {
-    const hit = intent.target === "contact" ? chunk.id === "contact" : firstOfRoute && chunk.route === intent.target;
+    const hit =
+      intent.target === "contact"
+        ? chunk.id === "contact"
+        : firstOfRoute && chunk.route === intent.target;
     if (hit) qs.push(...intent.questions);
   }
   const first = sentences(chunk.text)[0];

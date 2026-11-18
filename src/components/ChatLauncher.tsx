@@ -13,7 +13,13 @@ export function ChatLauncher() {
     () => ({ x: window.innerWidth - SIZE - 16, y: window.innerHeight - SIZE - 16 }),
     [],
   );
-  const btn = useDraggable({ storageKey: BTN_KEY, width: SIZE, height: SIZE, snapToEdge: true, defaultPos });
+  const btn = useDraggable({
+    storageKey: BTN_KEY,
+    width: SIZE,
+    height: SIZE,
+    snapToEdge: true,
+    defaultPos,
+  });
 
   useEffect(() => {
     if (open) setLoaded(true);

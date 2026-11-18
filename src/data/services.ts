@@ -1,11 +1,4 @@
-import {
-  Banknote,
-  Cloud,
-  Database,
-  Plug,
-  RefreshCw,
-  ShieldCheck,
-} from "lucide-react";
+import { Banknote, Cloud, Database, Plug, RefreshCw, ShieldCheck } from "lucide-react";
 
 export const services = [
   {

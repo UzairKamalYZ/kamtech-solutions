@@ -43,13 +43,8 @@ function ContactPage() {
       />
 
       <section className="container-page grid gap-10 py-16 lg:grid-cols-[1.2fr_1fr]">
-        <form
-          onSubmit={onSubmit}
-          className="rounded-2xl border border-border bg-card p-7 md:p-9"
-        >
-          <h2 className="font-display text-xl font-semibold text-foreground">
-            Project enquiry
-          </h2>
+        <form onSubmit={onSubmit} className="rounded-2xl border border-border bg-card p-7 md:p-9">
+          <h2 className="font-display text-xl font-semibold text-foreground">Project enquiry</h2>
           <p className="mt-1 text-sm text-muted-foreground">
             This form opens your email client with a draft message.
           </p>

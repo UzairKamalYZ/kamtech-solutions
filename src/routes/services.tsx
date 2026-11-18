@@ -42,9 +42,7 @@ function ServicesPage() {
               <div className="inline-flex h-11 w-11 items-center justify-center rounded-lg bg-brand-soft text-primary">
                 <s.icon className="h-5 w-5" />
               </div>
-              <h2 className="mt-5 font-display text-xl font-semibold text-foreground">
-                {s.title}
-              </h2>
+              <h2 className="mt-5 font-display text-xl font-semibold text-foreground">{s.title}</h2>
               <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{s.summary}</p>
               <div className="mt-5 flex flex-wrap gap-1.5">
                 {s.tags.map((t) => (
